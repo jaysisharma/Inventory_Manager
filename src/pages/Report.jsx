@@ -14,7 +14,7 @@ const SalesReport = () => {
     const fetchReport = async () => {
       try {
         const response = await fetch(
-          "http://65.0.139.1:3000/api/products/sales/report"
+          "http://localhost:3000/api/products/sales/report"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch sales report");
@@ -35,7 +35,7 @@ const SalesReport = () => {
     const fetchYearReport = async () => {
       try {
         const response = await fetch(
-          "http://65.0.139.1:3000/api/products/sales/year-report"
+          "http://localhost:3000/api/products/sales/year-report"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch current year sales report");
@@ -54,7 +54,7 @@ const SalesReport = () => {
     const fetchRepairRevenue = async () => {
       try {
         const response = await fetch(
-          "http://65.0.139.1:3000/api/repair-services/total-revenue"
+          "http://localhost:3000/api/repair-services/total-revenue"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch repair services revenue");

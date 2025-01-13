@@ -21,7 +21,7 @@ const ProductCatalog = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://65.0.139.1:3000/api/products");
+        const response = await axios.get("http://localhost:3000/api/products");
         setProducts(response.data);
       } catch (err) {
         setError("Failed to fetch products.");
@@ -117,7 +117,7 @@ const ProductCatalog = () => {
             totalAmount
         };
 
-        const response = await axios.post("http://65.0.139.1:3000/api/products/sell", saleData);
+        const response = await axios.post("http://localhost:3000/api/products/sell", saleData);
         console.log("Sale successful:", response.data);
 
         // Update product stock locally after successful sale

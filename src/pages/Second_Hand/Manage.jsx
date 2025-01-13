@@ -12,7 +12,7 @@ const SecondHandManageProduct = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://65.0.139.1:3000/api/second-hand-products');
+        const response = await axios.get('http://localhost:3000/api/second-hand-products');
         setProducts(response.data.data); // Assuming 'data' contains the products
       } catch (error) {
         setError('Failed to fetch second-hand products. Please try again later.');
@@ -34,7 +34,7 @@ const SecondHandManageProduct = () => {
 
   const handleDeleteProduct = async (productId) => {
     try {
-      await axios.delete(`http://65.0.139.1:3000/api/second-hand-products/${productId}`);
+      await axios.delete(`http://localhost:3000/api/second-hand-products/${productId}`);
       setProducts(products.filter(product => product._id !== productId)); // Remove deleted product from the list
     } catch (error) {
       setError('Failed to delete second-hand product. Please try again later.');

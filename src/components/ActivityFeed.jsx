@@ -9,7 +9,7 @@ const ActivityFeed = () => {
     const fetchActivities = async () => {
       try {
         const response = await axios.get(
-          "http://65.0.139.1:3000/api/activities"
+          "http://localhost:3000/api/activities"
         );
         console.log("Fetched Activities:", response.data); // Debug log
         setActivities(response.data);

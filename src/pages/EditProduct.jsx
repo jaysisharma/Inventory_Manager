@@ -22,7 +22,7 @@ const EditProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://65.0.139.1:3000/api/products/${productId}`);
+        const response = await axios.get(`http://localhost:3000/api/products/${productId}`);
         setProduct(response.data);
       } catch (error) {
         setError('Failed to load product details.');
@@ -94,7 +94,7 @@ const EditProduct = () => {
 
     try {
       const response = await axios.put(
-        `http://65.0.139.1:3000/api/products/${productId}`,
+        `http://localhost:3000/api/products/${productId}`,
         updatedProduct
       );
       alert('Product Updated Successfully');

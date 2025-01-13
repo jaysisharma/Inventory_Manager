@@ -32,7 +32,7 @@ const RepairOrdersList = () => {
       setError(null);
       try {
         const response = await axios.get(
-          "http://65.0.139.1:3000/api/repair-services"
+          "http://localhost:3000/api/repair-services"
         );
         const orders = response.data.data || [];
         setRepairOrders(orders);
@@ -84,7 +84,7 @@ const RepairOrdersList = () => {
     if (orderToMarkDone) {
       try {
         const response = await axios.patch(
-          `http://65.0.139.1:3000/api/repair-services/${orderToMarkDone}`,
+          `http://localhost:3000/api/repair-services/${orderToMarkDone}`,
           {
             repairStatus: "Completed",
             repairCost: repairCost, // Send repairCost to the backend
@@ -119,7 +119,7 @@ const RepairOrdersList = () => {
     if (orderToMarkInProgress) {
       try {
         const response = await axios.patch(
-          `http://65.0.139.1:3000/api/repair-services/${orderToMarkInProgress}`,
+          `http://localhost:3000/api/repair-services/${orderToMarkInProgress}`,
           { repairStatus: "In Progress" }
         );
         if (response.status === 200) {
@@ -151,7 +151,7 @@ const RepairOrdersList = () => {
     if (orderToCancel) {
       try {
         const response = await axios.patch(
-          `http://65.0.139.1:3000/api/repair-services/${orderToCancel}`,
+          `http://localhost:3000/api/repair-services/${orderToCancel}`,
           { repairStatus: "Canceled" }
         );
         if (response.status === 200) {
@@ -182,7 +182,7 @@ const RepairOrdersList = () => {
     if (orderToDelete) {
       try {
         await axios.delete(
-          `http://65.0.139.1:3000/api/repair-services/${orderToDelete}`
+          `http://localhost:3000/api/repair-services/${orderToDelete}`
         );
         setRepairOrders((prevOrders) =>
           prevOrders.filter((order) => order._id !== orderToDelete)

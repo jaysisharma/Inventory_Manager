@@ -17,7 +17,7 @@ const OrderDetail = () => {
     const fetchOrder = async () => {
       try {
         const response = await axios.get(
-          `http://65.0.139.1:3000/api/repair-services/${id}`
+          `http://localhost:3000/api/repair-services/${id}`
         );
         setOrder(response.data.data);
         // Recalculate itemServiced after fetching the order
@@ -49,7 +49,7 @@ const OrderDetail = () => {
 
       // Make the PATCH request to update servicingCompleted and technicianName
       const response = await axios.patch(
-        `http://65.0.139.1:3000/api/repair-services/${id}/products/${productIndexToComplete}`,
+        `http://localhost:3000/api/repair-services/${id}/products/${productIndexToComplete}`,
         { servicingCompleted: true, technicianName }
       );
 

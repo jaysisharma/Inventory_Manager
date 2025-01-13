@@ -93,7 +93,7 @@ const handleSubmit = async (e) => {
     console.log(secondHandProductData)
 
     // Send product data to backend API
-    const response = await axios.post("http://65.0.139.1:3000/api/second-hand-products", secondHandProductData, {
+    const response = await axios.post("http://15.207.117.202:3000/api/second-hand-products", secondHandProductData, {
       headers: {
         "Content-Type": "application/json",
       },
