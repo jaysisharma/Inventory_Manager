@@ -17,7 +17,7 @@ const ProductDetailPage = () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get(`http://localhost:3000/api/products/${productId}`);
+        const response = await axios.get(`http://65.0.139.1:3000/api/products/${productId}`);
         setProduct(response.data.product);
       } catch (error) {
         setError('Failed to load product details. Please try again later.');
@@ -39,7 +39,7 @@ const ProductDetailPage = () => {
     }
 
     try {
-      const response = await axios.post(`http://localhost:3000/api/products/${productId}/sell`, {
+      const response = await axios.post(`http://65.0.139.1:3000/api/products/${productId}/sell`, {
         sellPrice: Number(sellPrice),
       });
 

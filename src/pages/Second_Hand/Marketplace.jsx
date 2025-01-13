@@ -14,7 +14,7 @@ const SecondHandProductMarketplace = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/second-hand-products`, {
+        `http://65.0.139.1:3000/api/second-hand-products`, {
           params: {
             page,
             limit: productsPerPage,

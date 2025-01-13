@@ -15,7 +15,7 @@ const ManageProduct = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/products");
+        const response = await axios.get("http://65.0.139.1:3000/api/products");
         setProducts(response.data);
       } catch (error) {
         setError("Failed to fetch products. Please try again later.");
@@ -38,7 +38,7 @@ const ManageProduct = () => {
   const handleDeleteProduct = async () => {
     try {
       if (productToDelete) {
-        await axios.delete(`http://localhost:3000/api/products/${productToDelete._id}`);
+        await axios.delete(`http://65.0.139.1:3000/api/products/${productToDelete._id}`);
         setProducts(products.filter((product) => product._id !== productToDelete._id));
         setShowModal(false);
         setShowSuccessModal(true);

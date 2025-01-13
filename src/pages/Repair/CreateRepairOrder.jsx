@@ -171,7 +171,7 @@ const DashboardForm = () => {
     setIsLoading(true);
 
     try {
-      await axios.post("http://localhost:3000/api/repair-services/", formData);
+      await axios.post("http://65.0.139.1:3000/api/repair-services/", formData);
 
       setIsLoading(false);
       generatePDF();

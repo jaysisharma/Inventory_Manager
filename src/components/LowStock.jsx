@@ -12,7 +12,7 @@ const LowStock = () => {
     const fetchLowStockProducts = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/api/products/products/low-stock"
+          "http://65.0.139.1:3000/api/products/products/low-stock"
         );
         if (!response.ok) {
           throw new Error("No Products On Low Stock.");

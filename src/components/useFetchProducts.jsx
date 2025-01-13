@@ -12,7 +12,7 @@ const useFetchProducts = (filter, currentPage) => {
       setLoading(true);
       setError(null); // Reset error state before the fetch
       try {
-        const response = await axios.get('http://localhost:3000/api/products', {
+        const response = await axios.get('http://65.0.139.1:3000/api/products', {
           params: {
             ...filter,
             page: currentPage,
